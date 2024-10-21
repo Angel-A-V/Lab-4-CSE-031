@@ -1,11 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// int** matMult(int **a, int **b, int size) {
-// 	// (4) Implement your matrix multiplication here. 
-// 	// You will need to create a new matrix to store the product.
+int** matMult(int **a, int **b, int size) {
+	// (4) Implement your matrix multiplication here. 
+	// You will need to create a new matrix to store the product.
+	int **matSum = (int**)malloc(size * sizeof(int*)); // initialize a temp sum Matrix
+	for(int i = 0; i < size; i++){
+		*(matSum + i) = (int*)malloc(size * sizeof(int*));
+	}
 
-// }
+	for(int i = 0; i < size; i++){
+		for(int j = 0; j < size; j++){
+			*(*(matSum + i) + j) = 0;
+		}
+	}
+	
+	for(int i = 0; i < size; i++){
+		for(int j = 0; j < size; j++){
+			for(int k = 0; k < size; k++){
+				*(*(matSum + i)+ j) += *(*(a + i)+ k) * *(*(b + k)+ j);
+			}
+		}
+	}
+	return matSum;
+}
 
 void printArray(int **arr, int n) {
 	// (2) Implement your printArray function here
@@ -53,17 +71,22 @@ int main() {
 	}
 	printf("\n");
 
-	
 	// (3) Call printArray to print out the 2 arrays here.
+	printf("Matrix 1: \n");
 	printArray(matA, n);
 	printf("\n");
+	printf("Matrix 2: \n");
 	printArray(matB, n);
 	
 	// (5) Call matMult to multiply the 2 arrays here.
 	// matMult(matA, matB, matC);
+	matC = matMult(matA, matB, n); //Take the sum of matrix A and B
 	
 	// (6) Call printArray to print out resulting array here.
 	// printArray(matC, n);
+	printf("\n");
+	printf("Matrix Sum: \n");
+	printArray(matC, n);
 
     return 0;
 }
