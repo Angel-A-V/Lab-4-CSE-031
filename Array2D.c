@@ -8,24 +8,29 @@ int main() {
 	int **arr = (int**)malloc(n * sizeof(int*));
 
 	// (3) Add your code to complete allocating and initializing the 2-D array here. The content should be all 0.
-	for(int i = 0; i < n; i++){
+	for(i = 0; i < n; i++){
 		*(arr + i) = (int*)malloc(n * sizeof(int));
 	}
 
-	for(int i = 0; i < n; i++){ // Set every value of the sum matrix to zero
-		for(int j = 0; j < n; j++){
+	for(i = 0; i < n; i++){ // Set every value of the sum matrix to zero
+		for(j = 0; j < n; j++){
 			*(*(arr + i) + j) = 0;
 		}
 	}
 
     // This will print out your array
+	printf("Matrix: \n");
 	printArray(arr, n);
 
     // (6) Add your code to make arr a diagonal matrix
-    
+    for(i = 0; i < n; i++){
+			*(*(arr + i) + i) = i + 1;
+	}
 	
 	
 	// (7) Call printArray to print array
+	printf("\nDiagonal matrix: \n");
+	printArray(arr, n);
     
 	return 0;
 }
