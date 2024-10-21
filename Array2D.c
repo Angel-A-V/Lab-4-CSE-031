@@ -8,8 +8,15 @@ int main() {
 	int **arr = (int**)malloc(n * sizeof(int*));
 
 	// (3) Add your code to complete allocating and initializing the 2-D array here. The content should be all 0.
+	for(int i = 0; i < n; i++){
+		*(arr + i) = (int*)malloc(n * sizeof(int));
+	}
 
-
+	for(int i = 0; i < n; i++){ // Set every value of the sum matrix to zero
+		for(int j = 0; j < n; j++){
+			*(*(arr + i) + j) = 0;
+		}
+	}
 
     // This will print out your array
 	printArray(arr, n);
@@ -25,5 +32,11 @@ int main() {
 
 void printArray(int ** array, int size) {
     // (5) Implement your printArr here:
+	for(int i = 0; i < size; i++){
+		for(int j = 0; j < size; j++){
+			printf("%d ", *(*(array + i)+ j));
+		}
+		printf("\n");
+	}
 
 }
