@@ -1,0 +1,48 @@
+TPS 1:
+    Angel Vargas
+    Jordan Huynh
+    Gurkarn Singh
+    Roshan Kattil
+
+    1. I expect the progra to print the first index of four_ints array which should be the value 2.
+
+    2. I think it should still print the value 2 because there is no code directly changing it only functions
+       taking the vaalue of what is in the four_ints array and assigning it to a pointer.
+
+    3. I was wrong and its because I was unaware of the for loop not neding curly braces and that a pointer can modify
+       memory it is pointing too.
+
+    4. I was indeed lost when it printed the value two because I assumed that the for loop directly modified each of the
+       elements but I learned that because the char* in pointing to an int array the char* can only access one byte at a
+       time. Meaning that the first element was enough because the int is four bytes making our i end in the first index.
+    
+    5. a) There are one arrays allocated in this program.
+       b) Yes, because four_ints address is being pointed at by four_c meaning four_c can modify the data at the address its pointing at.
+       d) They are point at the same address but because char* is limtedto one byte at a time it prints the values of index(0) in increments
+    
+    6. The difference between the two consectutative elements address is the difference of bytes at the end of each address. We can see the array
+       index address increaments by 4 bytes. 
+    
+    7. [DRAWING LOCATED IN FILES]
+
+    8. The difference between the index address elements is 1 byte as each idex increments by one and this is because a char* goes byte by byte.
+
+    9. [DRAWING LOCATED IN FILES]
+
+    10. C increments the memory address based on the size of the data type. For int, it increments by 4 bytes, but for char, it increments by 1 byte
+
+TPS 2:
+
+    1. Line 8 dynamically allocates memory for an array of n pointers.
+
+    2. To access the pointers in the array we can use *(arr + i), as this dereferences the pointer to the ith row and allows us to work with the array of elements in row i.
+
+    3. [IMPLEMENTED IN Array2D.c]
+
+    4. We need the size so that we can determine the number of pointers and the number of elements for each pointer.
+
+    5. [IMPLEMENTED IN Array2D.c]
+
+    6. [IMPLEMENTED IN Array2D.c]
+
+    7. [IMPLEMENTED IN Array2D.c]
